@@ -52,7 +52,7 @@ func Compute(v VoteMatrix) (scores []Score, tie bool) {
 
 func compute(matrix [][]voteCount, choices []string) (scores []Score, tie bool) {
 	strengths := calculatePairwiseStrengths(matrix)
-	return calculteScores(strengths, choices)
+	return calculateScores(strengths, choices)
 }
 
 func calculatePairwiseStrengths(m [][]voteCount) [][]strength {
@@ -91,7 +91,7 @@ func calculatePairwiseStrengths(m [][]voteCount) [][]strength {
 	return strengths
 }
 
-func calculteScores(strengths [][]strength, choices []string) (scores []Score, tie bool) {
+func calculateScores(strengths [][]strength, choices []string) (scores []Score, tie bool) {
 	size := len(strengths)
 	wins := make(map[int][]int)
 
